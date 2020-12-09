@@ -1,0 +1,13 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'cookbook/style.css' %}">
+    </head>
+    <body>
+        <h1>My recipe list</h1>
+        {% for recipe in recipe_list %}
+            <h2><a href="{% url 'cookbook:detail' recipe.id %}">{{ recipe.title }}</a></h2>
+        {% endfor %}
+    </body>
+</html>
