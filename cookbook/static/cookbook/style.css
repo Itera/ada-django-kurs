@@ -1,0 +1,105 @@
+/* Defines styling that is applied on all HTML body-elements. No need for classnames etc. */
+body {
+  /* Margin defines how much empty space are required around an object.
+  In this case, the content inside the body-tag requires 20px empty space around it in all directions. */
+  margin: 20px;
+}
+
+/********** STYLING FOR INDEX PAGE **********/
+
+.recipe-list {
+  /* Using flex is a method for dynamically moving the page content
+  if the content or the page size changes. */
+  display: flex;
+
+  /* Flex-wrap is a method for dynamically creating a new line of items if
+  the window size is too small to display all elements next to each other. */
+  flex-wrap: wrap;
+
+  /* Flex-direction defines in which direction items are being displayed.
+  In this case, recipes are listed row-wise. */
+  /* TASK: Try changing the value from 'row' to 'column'. What happens? */
+  flex-direction: row;
+}
+
+.recipe-list-item {
+  /* Using flex is a method for dynamically moving the page content
+  if the content or the page size changes. */
+  display: flex;
+
+  /* Flex-direction defines in which direction items are being displayed.
+  In this case, recipe details are listed columnn-wise. */
+  /* TASK: Try changing the value from 'column' to 'row'. What happens? */
+  flex-direction: column;
+
+  /* Margin defines how much empty space are required around an object.
+  In this case, each recipe in the recipe list requires 20px empty space on the left and right side. */
+  margin-left: 20px;
+  margin-right: 20px;
+
+  /* Defines how wide each recipe preview should be. */
+  width: 300px;
+}
+
+.recipe-image {
+  /* Object-fit is used to resize images to fit the height and width specified below.
+  In this case, 'cover' crops the "overflow" of the picture while still keeping the same image ratio. */
+  object-fit: cover;
+
+  /* Height and width specifies the size of the image. */
+  /* TASK: Try changing the width value from 300px to 150px. What happens? */
+  height: 200px;
+  width: 300px;
+}
+
+/********** STYLING FOR DETAIL PAGE **********/
+
+.recipe-details {
+  /* Using flex is a method for dynamically moving the page content
+  if the content or the page size changes. */
+  display: flex;
+
+  /* Flex-wrap is a method for dynamically creating a new line of items if
+  the window size is too small to display all elements next to each other. */
+  flex-wrap: wrap;
+
+  /* Flex-direction defines in which direction items are being displayed.
+  In this case, ingredients and description are displayed next to each other (row-wise). */
+  /* TASK: Try changing the value from 'row' to 'column'. What happens? */
+  flex-direction: row;
+}
+
+.recipe-ingredients {
+  /* Background color is perhaps self-explanatory, but it defines which color the background
+  should have. In this case, the whole recipe-ingredients div have the background color light gray. */
+  background-color: lightgray;
+
+  /* Margin defines how much empty space are required around an object.
+  In this case, the recipe-ingredients <div> requires 10px empty space on the right side. */
+  margin-right: 10px;
+
+  /* Padding is quite similar to margin, but defines how much empty space are required within an object.
+  For instance, if you have background color light gray, margin is the space around the object without
+  background color, while padding is the space around the object with background color. In this case,
+  the recipe-ingredients <div> requires 10px empty space on the left and the right side.*/
+  padding-left: 10px;
+  padding-right: 10px;
+
+  /* Max-width defines how wide an element can be at the maximum. Up until this width,
+  the element uses as much space as it needs. */
+  max-width: 350px;
+
+  /* TASK: Add styling here */
+}
+
+.recipe-description {
+  /* Margin defines how much empty space are required around an object.
+  In this case, the recipe-description <div> requires 10px empty space on the left side. */
+  margin-left: 10px;
+
+  /* Max-width defines how wide an element can be at the maximum. Up until this width,
+  the element uses as much space as it needs. */
+  max-width: 500px;
+
+  /* TASK: Add styling here */
+}

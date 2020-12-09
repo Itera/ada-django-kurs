@@ -1,0 +1,21 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'cookbook/style.css' %}">
+    </head>
+    <body>
+        <h1>Register comment for {{ recipe.title }}</h1>
+
+        <form action="{% url 'cookbook:comment' recipe.id %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="author" id="author" placeholder="Author">
+            <br />
+            <textarea name="comment" id="comment" placeholder="Comment"></textarea>
+            <br />
+            <input type="submit" value="Register">
+        </form>
+
+        <a href="{% url 'cookbook:detail' recipe.id %}"><p>Back</p></a>
+    </body>
+</html>

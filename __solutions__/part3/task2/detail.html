@@ -1,0 +1,16 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'cookbook/style.css' %}">
+    </head>
+    <body>
+        <img src={{ recipe.image.url }} width="500px">
+        <h1>{{ recipe.title }}</h1>
+        <h2>Ingredients</h2>
+        <p>{{ recipe.ingredients | linebreaks }}</p>
+        <h2>Description</h2>
+        <p>{{ recipe.description | linebreaks }}</p>
+        <a href="{% url 'cookbook:index' %}"><p>Back</p></a>
+    </body>
+</html>
