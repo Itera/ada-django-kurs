@@ -20,7 +20,7 @@
         </div>
 
         <h2>Comments</h2>
-        <p><a href="{% url 'cookbook:comment' recipe.id %}">Register a new comment</a></p>
+        <a href="{% url 'cookbook:comment' recipe.id %}"><p>Register a new comment</p></a>
         <hr />
         {% for comment in recipe.comment_set.all %}
             <p><b>Author: {{ comment.author }}</b></p>
@@ -29,6 +29,6 @@
             <hr />
         {% endfor %}
 
-        <p><a href="{% url 'cookbook:index' %}">Back</a></p>
+        <a href="{% url 'cookbook:index' %}"><p>Back</p></a>
     </body>
 </html>

@@ -7,7 +7,7 @@
     <body>
         <h1>My recipe list</h1>
         {% for recipe in recipe_list %}
-            <h2><a href="{% url 'cookbook:detail' recipe.id %}">{{ recipe.title }}</a></h2>
+            <a href="{% url 'cookbook:detail' recipe.id %}"><h2>{{ recipe.title }}</h2></a>
         {% endfor %}
     </body>
 </html>

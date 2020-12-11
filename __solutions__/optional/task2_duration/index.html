@@ -10,7 +10,7 @@
             {% for recipe in recipe_list %}
                 <div class="recipe-list-item">
                     <img src={{ recipe.image.url }} class="recipe-image">
-                    <h2><a href="{% url 'cookbook:detail' recipe.id %}">{{ recipe.title }}</a></h2>
+                    <a href="{% url 'cookbook:detail' recipe.id %}"><h2>{{ recipe.title }}</h2></a>
                     <p>Duration: {{ recipe.duration }}</p>
                 </div>
             {% endfor %}

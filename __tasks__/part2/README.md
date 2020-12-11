@@ -17,10 +17,10 @@ item = [MODEL].objects.get(pk=[ID])
 This command will retrieve the object that matches the given id. However, if we try a primary key that does not exist, the server will send a HTTP response that the item could not be found, and our application will crash. Fortunately, Django has a clever way of handling such an error, where the user receives a warning without having the application to crash. This function is called `get_object_or_404`, and handles both the retrieval of the object and error handling if the object does not exist. Here is an example of how it can be used:
 
 ```python
-item = get_object_or_404([MODEL], [ID])
+item = get_object_or_404([MODEL], pk=[ID])
 ```
 
-Copy this function to your detail view, abd switch out `[MODEL]` and `[ID]` with the correct model and identifier. Pass the item on as context to the render function, like we did in the previous part. Once you have completed this, go on to the next task where we will use this retrieved recipe and render it in our application.
+Copy this function to your detail view, import `get_object_or_404` from `django.shortcuts` and switch out `[MODEL]` and `[ID]` with the correct model and identifier. Pass the item on as context to the render function, like we did in the previous part. Once you have completed this, go on to the next task where we will use this retrieved recipe and render it in our application.
 
 Are you uncertain on how to implement the 404-handling, or are you experiencing any issues? Ask an Itera employee for help or check out the `__solutions__` folder.
 
@@ -71,18 +71,14 @@ These two lines specify that Django should look for images in the `media` folder
 
 Now it's time to render our image, so go ahead and open `detail.html`. Since we have now declared where Django might find our pictures, you can specify the path like this:
 
-<!-- Noe rart med formatering her når man lagrer -->
-
-```html
-<img src="{{" [VARIABLE].image.url }} />
+```
+<img src={{ [VARIABLE].image.url }} />
 ```
 
 Copy this command and switch out `[VARIABLE]` with your own recipe variable. Reload the page. Did it appear? Great! However, the picture is quite big. This can easily be solved by adding a `width` property to the HTML tag:
 
-<!-- Noe rart med formatering her når man lagrer -->
-
-```html
-<img src="{{" [VARIABLE].image.url }} width="500px" />
+```
+<img src={{ [VARIABLE].image.url }} width="500px" />
 ```
 
 In this case, the `width` property is set to 500 pixels wide. Explore different sizes and find the one you like.

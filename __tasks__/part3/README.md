@@ -23,13 +23,13 @@ path("[URLPATH]", [VIEW], [NAME])
 To refer to such paths from other files, you can use the following syntax:
 
 ```python
-"{% '[APP_NAME]:[NAME]' %}"
+"{% url '[APP_NAME]:[NAME]' %}"
 ```
 
 With this command, Django makes a little magic for you, and renders the view associated with `'[APP_NAME]:[NAME]'`. However, for the detail view path, we also need the parameter `recipe_id`. To pass such variables into the URL path, you can add it as a parameter. Django will then use this variable in the path. Here is an example:
 
 ```python
-"{% '[APP_NAME]:[NAME]' [VARIABLE] %}"
+"{% url '[APP_NAME]:[NAME]' [VARIABLE] %}"
 ```
 
 Open `index.html`, and combine the HTML `<a>` tag and the Django URL to create a link to each recipe. You can easily solve this by adding the `<a>` tag around the recipe title.
@@ -50,17 +50,15 @@ Good job! Now it's much easier to navigate and use the application the way it is
 
 To make the list view a bit more appealing, we will display the images here like we did in the detail view. To achieve this, you can reuse the for-loop you wrote in part 1 and add a HTML `<img>` tag inside it. Here is a short recap of you images can be rendered:
 
-<!-- Noe rart med formatering her når man lagrer -->
-
-```html
-<img src="{{" [VARIABLE].image.url }} width="500px" />
+```
+<img src={{ [VARIABLE].image.url }} width="500px" />
 ```
 
 Once you have added the tag, save the file and reload the list page. Now you can see the images for each recipe, in addition to the titles you rendered in part 1. Great job!
 
 # Task 4: Styling the recipes in the list view
 
-To make our list view more neat, we want a grid based view where the recipes are displayed beside each other. To achieve this, we will use a CSS layout model called _Flexbox_. The Flexbox styling is already fixed for you in `style.css`, so the only thing you will have to do is use the following class names in your HTML structure:
+To make our list view more neat, we want a grid based view where the recipes are displayed beside each other. To achieve this, we will use a CSS layout model called _Flexbox_. The Flexbox styling is already fixed for you in `style.css`, which can be found under `static/cookbook`, so the only thing you will have to do is use the following class names in your HTML structure:
 
 - `recipe-list`: styling for a `<div>` containing the recipes
 - `recipe-list-item`: styling for a `<div>` containing one recipe
@@ -107,7 +105,7 @@ Last, but not least, we need to style the detail view. Like we did with the list
 
 - `recipe-details`: styling for a `<div>` containing the ingredients and the description
 - `recipe-ingredients`: styling for a `<div>` containing the ingredients
-- `recipe-description`: styling for an `<img>` containing the description
+- `recipe-description`: styling for a `<div>` containing the description
 
 ```html
 *image and title goes here*
