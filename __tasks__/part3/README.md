@@ -111,11 +111,11 @@ Last, but not least, we need to style the detail view. Like we did with the list
 *image and title goes here*
 <div class="<containername>">
   <div class="<name1>">*name1 content goes here*</div>
-  <div class="<name1>">*name1 content goes here*</div>
+  <div class="<name2>">*name2 content goes here*</div>
 </div>
 ```
 
-Try to recreate this structure in `detail.html`, while still preserving the code from earlier steps. Reload the page and see how your page components have moved.
+Try to recreate this structure in `detail.html`, while still preserving the code from earlier steps. The styling in `style.css` assumes that the ingredients `<div>` comes before the description `<div>`, so we recommend you to place them in that order. Reload the page and see how your page components have moved.
 
 Open `style.css` and read the styling defined for `recipe-details`, `recipe-ingredients` and `recipe-description`. Do you understand what each CSS property does?
 

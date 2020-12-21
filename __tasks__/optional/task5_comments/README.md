@@ -58,7 +58,7 @@ Open `admin.py`, and import `Comment` from `.models`. As you can see, the `Recip
 admin.site.register(Comment)
 ```
 
-Save the file and head over to _/admin_. Log in with username XXX and password YYY, and you will access the admin panel. Click on `Comments`, and then `Add comment` in the upper right corner. Choose the recipe you want to comment, type in author and your comment, and save the changes. Repeat this a few times such that we have some testdata.
+Save the file and head over to _/admin_. Log in with username _XXX_ and password _YYY_, and you will access the admin panel. Click on `Comments`, and then `Add comment` in the upper right corner. Choose the recipe you want to comment, type in author and your comment, and save the changes. Repeat this a few times such that we have some testdata.
 
 Now it's time to render these comments in our application. Open `detail.html`, and add a `<h2>` tag with the text "Comments" in it. To render our comments, we will perform some magic.
 

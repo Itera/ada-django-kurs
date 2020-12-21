@@ -39,7 +39,7 @@ body {
 
 .recipe-image {
   /* Object-fit is used to resize images to fit the height and width specified below.
-  In this case, 'cover' crops the "overflow" of the picture while still keeping the same image ratio.*/
+  In this case, 'cover' crops the "overflow" of the picture while still keeping the same image ratio. */
   object-fit: cover;
 
   /* Height and width specifies the size of the image. */
@@ -66,14 +66,28 @@ body {
 }
 
 .recipe-ingredients {
-  /* TO DO: Add styling here */
+  /* Background color is perhaps self-explanatory, but it defines which color the background
+  should have. In this case, the whole recipe-ingredients div have the background color light gray. */
   background-color: lightgray;
+
+  /* Margin defines how much empty space are required around an object.
+  In this case, ethe recipe-ingredients <div> requires 10px empty space on the right side. */
   margin-right: 10px;
+
+  /* Padding is quite similar to margin, but defines how much empty space are required within an object.
+  For instance, if you have background color light gray, margin is the space around the object without
+  background color, while padding is the space around the object with background color. In this case,
+  the recipe-ingredients <div> requires 10px empty space on the left and the right side.*/
   padding-left: 10px;
   padding-right: 10px;
+
+  /* TO DO: Add styling here */
 }
 
 .recipe-description {
-  /* TO DO: Add styling here */
+  /* Margin defines how much empty space are required around an object.
+  In this case, the recipe-description <div> requires 10px empty space on the left side. */
   margin-left: 10px;
+
+  /* TO DO: Add styling here */
 }

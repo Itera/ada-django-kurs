@@ -28,7 +28,7 @@ Type it into your terminal, and press enter. Now you should see a message ending
 
 The next step is to add the authors for a few recipes, such that we can display the authors in our application. To do this, we will use the Django admin panel. This is a page where you, among other things, can see and edit all the content in your database.
 
-Head over to _/admin_, and log in with username XXX and password YYY. Navigate to `Recipes`, and then click on a recipe you want to add authors to. Fill in a value for `author`, for instance "Ada Lovelace", and save the changes. Repeat this a few times such that we have some testdata.
+Head over to _/admin_, and log in with username _XXX_ and password _YYY_. Navigate to `Recipes`, and then click on a recipe you want to add authors to. Fill in a value for `author`, for instance "Ada Lovelace", and save the changes. Repeat this a few times such that we have some testdata.
 
 Once you have created the testdata for the `author` field, open `detail.html`. Add a `<p>` tag containing our new author variable, like we have done previously for `description` and `ingredients`. If you are unsure where to place it, you could for instance render it under the recipe title. Note that for the recipes that do _not_ have the `author` field, Django will just render an empty `<p>` tag. If you would like to see the author when browsing for recipes, you could repeat these steps in `index.html` as well.
 
