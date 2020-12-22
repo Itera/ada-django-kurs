@@ -131,4 +131,8 @@ How you want to style the detail page is completely up to you, but if you are ou
 - border-style, border-width and border-color: https://www.w3schools.com/cssref/pr_border-style.asp
 - text-decoration: https://www.w3schools.com/cssref/pr_text_text-decoration.asp
 
-After some CSS exploring, head over to the optional tasks and see if there is something you would like to learn more about. You can also continue playing with CSS and all the properties that it has, if you find that more interesting. Maybe you have a design idea, but are uncertain of how you can implement it? Ask an Itera employee for help, and we will figure it out together :)
+---
+
+After some CSS exploring, head over to the [optional tasks](/__tasks__/optional) and see if there is something you would like to learn more about. You can also continue playing with CSS and all the properties that it has, if you find that more interesting. Maybe you have a design idea, but are uncertain of how you can implement it? Ask an Itera employee for help, and we will figure it out together :)
+
+You can find the solutions for part 3 [here](/__solutions__/part3).

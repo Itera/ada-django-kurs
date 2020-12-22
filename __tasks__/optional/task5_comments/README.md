@@ -22,7 +22,7 @@ recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
 
 Remember to save the file before continuing. Your `Comment` model should look like this:
 
-<!-- Kan evt. fjerne dette -->
+<!-- Kan evt. fjerne løsningen under -->
 
 ```python
 class Comment(models.Model):
@@ -34,9 +34,7 @@ class Comment(models.Model):
 
 Next, we need to let our database know about the changes to our model. To do this, we create a _migration_, which describes the changes we have made. After we have created the migration, we apply the migration to let the database know about the changes.
 
-<!-- Sjekk ut hvordan dette gjøres i repl.it -->
-
-First, open the terminal in repl.it. Type the following into the terminal, and press enter:
+First, click on the terminal in repl.it. Type the following into the terminal, and press enter:
 
 ```python
 python manage.py makemigrations cookbook
@@ -148,3 +146,9 @@ The submit button will redirect us back to the detail view, but the user might r
 The final step in this task is to add a link from the detail view to the comment view. You could for instance use a `<p>` with the text "Register a new comment", and then wrap a link around it. Again, remember to use the correct url name and pass `recipe.id` as a parameter.
 
 Save the files, and reload the page. Try to add a new comment in your new comment view, and check if it appears in the detail view. Did it work? Great job! If not, ask an Itera employee for help or check out the `__solutions__` folder.
+
+---
+
+Finished with your task? Click [here](/__tasks__/optional) to go back to the optional tasks.
+
+You can find the solutions for optional task 5 [here](/__solutions__/optional/task5_comments).

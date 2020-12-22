@@ -1,4 +1,4 @@
-# Task 1: Add new recipe attribute (likes)
+# Task 4: Add new recipe attribute (likes)
 
 Level of difficulty: **medium**.
 
@@ -16,9 +16,7 @@ Use this code to add a field named `likes`. Be sure to save the file once you ar
 
 Next, we need to let our database know about the changes to our model. To do this, we create a _migration_, which describes the changes we have made. After we have created the migration, we apply the migration to let the database know about the changes.
 
-<!-- Sjekk ut hvordan dette gjøres i repl.it -->
-
-First, open the terminal in repl.it. Type the following into the terminal, and press enter:
+First, click on the terminal in repl.it. Type the following into the terminal, and press enter:
 
 ```python
 python manage.py makemigrations cookbook
@@ -56,3 +54,9 @@ Additionally, we need to add a button so that we can increment the `likes` value
 The _form method_ specifies that we will make a POST request. `csrf_token` is a Django safety measure to prevent harmful input to compromise our application, but don't worry about this. This is just something we have to add, and then Django will handle the input validation for us. Inside the form we have a `<input>` of type _submit_, which is a button that sends the POST request once you click it. This is all we need to trigger the logic we recently wrote in `views.py`.
 
 Save the file, and head over to the application. Did the likes appear? And is it possible to increment the value? Great! If not, check out the `__solutions__` folder or ask an Itera employee for help.
+
+---
+
+Finished with your task? Click [here](/__tasks__/optional) to go back to the optional tasks.
+
+You can find the solutions for optional task 4 [here](/__solutions__/optional/task4_likes).

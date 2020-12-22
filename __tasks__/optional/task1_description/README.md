@@ -13,3 +13,9 @@ However, the description is often quite long, and we are not interested in seein
 ```
 
 Try adding this to your recipe description. Did it work? Great! If not, ask an Itera employee for help or check out the optional tasks in the `__solutions__` folder.
+
+---
+
+Finished with your task? Click [here](/__tasks__/optional) to go back to the optional tasks.
+
+You can find the solutions for optional task 1 [here](/__solutions__/optional/task1_description).

@@ -1,8 +1,8 @@
-# Task 1: Add new recipe attribute (duration)
+# Task 2: Add new recipe attribute (duration)
 
 Level of difficulty: **medium**.
 
-If you are in a hurry, wouldn't it be great to see how long time it takes to make each dish? In this task, we will add a new attribute to our recipe model: _duration_.
+If you are in a hurry, wouldn't it be great to see how long time it takes to cook each dish? In this task, we will add a new attribute to our recipe model: _duration_.
 
 The first thing you will have to do is to create a new field in our `Recipe` model.
 
@@ -10,9 +10,7 @@ Open `models.py` and create a new field called `duration`. The `duration` field 
 
 Next, we need to let our database know about the changes to our model. To do this, we create a _migration_, which describes the changes we have made. After we have created the migration, we apply the migration to let the database know about the changes.
 
-<!-- Sjekk ut hvordan dette gjøres i repl.it -->
-
-First, open the terminal in repl.it. Type the following into the terminal, and press enter:
+First, click on the terminal in repl.it. Type the following into the terminal, and press enter:
 
 ```python
 python manage.py makemigrations cookbook
@@ -33,3 +31,9 @@ Head over to _/admin_, and log in with username _XXX_ and password _YYY_. Naviga
 Once you have created the testdata for the `duration` field, open `detail.html`. Add a `<p>` tag containing our new duration variable, like we have done previously for `description` and `ingredients`. If you are unsure where to place it, you could for instance render it under the recipe title or under the description title. Note that for the recipes that do _not_ have the `duration` field, Django will just render an empty `<p>` tag. If you would like to see the duration value when browsing for recipes, you could repeat these steps in `index.html` as well.
 
 Save the file, and head over to one of your modified recipes in the application. Did the duration value appear? Great! If not, check out the `__solutions__` folder or ask an Itera employee for help.
+
+---
+
+Finished with your task? Click [here](/__tasks__/optional) to go back to the optional tasks.
+
+You can find the solutions for optional task 2 [here](/__solutions__/optional/task2_duration).

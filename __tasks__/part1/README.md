@@ -101,3 +101,9 @@ recipe_list = Recipe.objects.order_by("-pub_date")
 ```
 
 Your recipes are now ordered from newest publishing date to the oldest. Choose the ordering that suits you the best, and remember that you can always change this ordering later if you want to.
+
+---
+
+Ready for part 2 of the course? Click [here](/__tasks__/part2) to go to the next tasks.
+
+You can find the solutions for part 1 [here](/__solutions__/part1).

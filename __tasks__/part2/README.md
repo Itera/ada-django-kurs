@@ -82,3 +82,9 @@ Copy this command and switch out `[VARIABLE]` with your own recipe variable. Rel
 ```
 
 In this case, the `width` property is set to 500 pixels wide. Explore different sizes and find the one you like.
+
+---
+
+Ready for part 3 of the course? Click [here](/__tasks__/part3) to go to the next tasks.
+
+You can find the solutions for part 2 [here](/__solutions__/part2).

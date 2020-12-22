@@ -1,4 +1,4 @@
-# Task 1: Add new recipe attribute (author)
+# Task 3: Add new recipe attribute (author)
 
 Level of difficulty: **medium**.
 
@@ -10,9 +10,7 @@ Open `models.py` and create a new field called `author`. The `author` field will
 
 Next, we need to let our database know about the changes to our model. To do this, we create a _migration_, which describes the changes we have made. After we have created the migration, we apply the migration to let the database know about the changes.
 
-<!-- Sjekk ut hvordan dette gjøres i repl.it -->
-
-First, open the terminal in repl.it. Type the following into the terminal, and press enter:
+First, click on the terminal in repl.it. Type the following into the terminal, and press enter:
 
 ```python
 python manage.py makemigrations cookbook
@@ -33,3 +31,9 @@ Head over to _/admin_, and log in with username _XXX_ and password _YYY_. Naviga
 Once you have created the testdata for the `author` field, open `detail.html`. Add a `<p>` tag containing our new author variable, like we have done previously for `description` and `ingredients`. If you are unsure where to place it, you could for instance render it under the recipe title. Note that for the recipes that do _not_ have the `author` field, Django will just render an empty `<p>` tag. If you would like to see the author when browsing for recipes, you could repeat these steps in `index.html` as well.
 
 Save the file, and head over to one of your modified recipes in the application. Did the author appear? Great! If not, check out the `__solutions__` folder or ask an Itera employee for help.
+
+---
+
+Finished with your task? Click [here](/__tasks__/optional) to go back to the optional tasks.
+
+You can find the solutions for optional task 3 [here](/__solutions__/optional/task3_author).

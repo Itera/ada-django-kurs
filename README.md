@@ -73,3 +73,16 @@ The database models is defined in `models.py`, and specifies what kind of object
 - pub_date (date published)
 
 The first three fields are of type `TextField`, and stores textual input. Image is of type `ImageField`, and stores images, as you might have guessed. Pub-date is of type `DatetimeField`, and stores a timestamp. We have configured that the default value for this field is the current timestamp, if the field value is not specified by the user.
+
+### Tasks and solutions
+
+Now it's time to get started on the tasks! The `__tasks__` folder is built up like this:
+
+- `part1`: tasks for part 1 of the course.
+- `part2`: tasks for part 2 of the course.
+- `part3`: tasks for part 3 of the course.
+- `optional`: tasks you can explore if you are finished with the tasks ahead of time, or would like to challenge yourself after the course is finished.
+
+Click [here](/__tasks__/part1) to go to the tasks for part 1 of the course.
+
+Note that we also have a `__solutions__` folder with the same structure as `__tasks__`, where you can find complete solution proposals for the different tasks. Click [here](/__solutions__) to go to the `__solutions__` folder. However, we recommend you to ask an Itera employee for help if you are stuck at a task :)
