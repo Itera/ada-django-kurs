@@ -9,6 +9,3 @@ class Recipe(models.Model):
     ingredients = models.TextField()
     image = models.ImageField(upload_to="recipes")
     pub_date = models.DateTimeField(default=datetime.now)
-
-    def __str__(self):
-        return self.title

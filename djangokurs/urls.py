@@ -21,6 +21,8 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path("", RedirectView.as_view(pattern_name="cookbook:index")),
+    path("cookbook", RedirectView.as_view(pattern_name="cookbook:index")),
     path("cookbook/", include("cookbook.urls")),
+    path("admin", RedirectView.as_view(pattern_name="admin:index")),
     path("admin/", admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

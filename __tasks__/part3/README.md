@@ -14,7 +14,7 @@ To make it easier to explore different recipes, we want to make the recipe title
 
 `[PATH]` is the URL we want to navigate to, and one could for instance specify www.vg.no here. However, we want to navigate to another page within our application, and the `recipe_id` plays an important role here. How to pass this on dynamically?
 
-Open `urls.py` and take a look at the code. First, you see that the `app_name` is set to _cookbook_. Further, you can see a variable `urlpattern` containing several paths. The paths are built with the following structure:
+Open `cookbook/urls.py` and take a look at the code. First, you see that the `app_name` is set to _cookbook_. Further, you can see a variable `urlpattern` containing several paths. The paths are built with the following structure:
 
 ```python
 path("[URLPATH]", [VIEW], [NAME])
@@ -26,13 +26,13 @@ To refer to such paths from other files, you can use the following syntax:
 "{% url '[APP_NAME]:[NAME]' %}"
 ```
 
-With this command, Django makes a little magic for you, and renders the view associated with `'[APP_NAME]:[NAME]'`. However, for the detail view path, we also need the parameter `recipe_id`. To pass such variables into the URL path, you can add it as a parameter. Django will then use this variable in the path. Here is an example:
+With this command, Django does a little magic for you, and renders the view associated with `'[APP_NAME]:[NAME]'`. However, for the detail view path, we also need the parameter `recipe_id`. To pass such variables into the URL path, you can add it as a parameter. Django will then use this variable in the path. Here is an example:
 
 ```python
 "{% url '[APP_NAME]:[NAME]' [VARIABLE] %}"
 ```
 
-Open `index.html`, and combine the HTML `<a>` tag and the Django URL to create a link to each recipe. You can easily solve this by adding the `<a>` tag around the recipe title.
+Open `index.html`, and combine the HTML `<a>` tag and the Django URL to create a link to each recipe. You can solve this by adding the `<a>` tag around the recipe title.
 
 Did you manage to create the link? If not, don't worry! Check out the `__solutions__` folder for an example of how you might do it.
 
@@ -56,7 +56,7 @@ To make the list view a bit more appealing, we will display the images here like
 
 Once you have added the tag, save the file and reload the list page. Now you can see the images for each recipe, in addition to the titles you rendered in part 1. Great job!
 
-# Task 4: Styling the recipes in the list view
+## Task 4: Styling the recipes in the list view
 
 To make our list view more neat, we want a grid based view where the recipes are displayed beside each other. To achieve this, we will use a CSS layout model called _Flexbox_. The Flexbox styling is already fixed for you in `style.css`, which can be found under `static/cookbook`, so the only thing you will have to do is use the following class names in your HTML structure:
 
@@ -64,7 +64,7 @@ To make our list view more neat, we want a grid based view where the recipes are
 - `recipe-list-item`: styling for a `<div>` containing one recipe
 - `recipe-image`: styling for an `<img>` containing the recipe image
 
-To use these class names, we recommend a HTML structure like this:
+To use these class names, the HTML can be structured like this:
 
 ```html
 <div class="<containername>">
@@ -91,6 +91,8 @@ We have defined a few tasks in `style.css`:
 
 Follow the tasks and reload the page. Did you notice what happened?
 
+:exclamation: If the style still looks the same, you should try a hard refresh in the browser. A hard refresh can be performed by using `cmd + shift + R` on Mac or `ctrl + shift + R` on Windows.
+
 Your page is now built like this:
 
 - Recipes are listed column-wise, i.e. vertically instead of horizontally.
@@ -99,7 +101,7 @@ Your page is now built like this:
 
 Note that this was just a quick experiment, so be sure to revert these changes before continuing. Having said that, feel free to explore with the margins and width defined for `recipe-list-item`.
 
-# Task 5: Styling the recipe in the detail view
+## Task 5: Styling the recipe in the detail view
 
 Last, but not least, we need to style the detail view. Like we did with the list view, we have also defined CSS you can use in your detail template. Here is the class names and how they should be used:
 
@@ -133,6 +135,6 @@ How you want to style the detail page is completely up to you, but if you are ou
 
 ---
 
-After some CSS exploring, head over to the [optional tasks](/__tasks__/optional) and see if there is something you would like to learn more about. You can also continue playing with CSS and all the properties that it has, if you find that more interesting. Maybe you have a design idea, but are uncertain of how you can implement it? Ask an Itera employee for help, and we will figure it out together :)
+After some CSS exploring, head over to the [optional tasks](/__tasks__/optional) and see if there is something you would like to learn more about. You can also continue playing with CSS and all the properties that it has, if you find that more interesting. Maybe you have a design idea, but are uncertain of how you can implement it? Ask an Itera employee for help, and we will figure it out together :smile:
 
 You can find the solutions for part 3 [here](/__solutions__/part3).

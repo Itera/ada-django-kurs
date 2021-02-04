@@ -18,14 +18,18 @@ body {
 
   /* Flex-direction defines in which direction items are being displayed.
   In this case, recipes are listed row-wise. */
-  /* TO DO: Try changing the value from 'row' to 'column'. What happens? */
+  /* TASK: Try changing the value from 'row' to 'column'. What happens? */
   flex-direction: row;
 }
 
 .recipe-list-item {
+  /* Using flex is a method for dynamically moving the page content
+  if the content or the page size changes. */
+  display: flex;
+
   /* Flex-direction defines in which direction items are being displayed.
   In this case, recipe details are listed columnn-wise. */
-  /* TO DO: Try changing the value from 'column' to 'row'. What happens? */
+  /* TASK: Try changing the value from 'column' to 'row'. What happens? */
   flex-direction: column;
 
   /* Margin defines how much empty space are required around an object.
@@ -43,7 +47,7 @@ body {
   object-fit: cover;
 
   /* Height and width specifies the size of the image. */
-  /* TO DO: Try changing the width value from 300px to 150px. What happens? */
+  /* TASK: Try changing the width value from 300px to 150px. What happens? */
   height: 200px;
   width: 300px;
 }
@@ -60,8 +64,8 @@ body {
   flex-wrap: wrap;
 
   /* Flex-direction defines in which direction items are being displayed.
-  In this case, recipes are listed row-wise. */
-  /* TO DO: Try changing the value from 'row' to 'column'. What happens? */
+  In this case, ingredients and description are displayed next to each other (row-wise). */
+  /* TASK: Try changing the value from 'row' to 'column'. What happens? */
   flex-direction: row;
 }
 
@@ -71,7 +75,7 @@ body {
   background-color: lightgray;
 
   /* Margin defines how much empty space are required around an object.
-  In this case, ethe recipe-ingredients <div> requires 10px empty space on the right side. */
+  In this case, the recipe-ingredients <div> requires 10px empty space on the right side. */
   margin-right: 10px;
 
   /* Padding is quite similar to margin, but defines how much empty space are required within an object.
@@ -81,7 +85,11 @@ body {
   padding-left: 10px;
   padding-right: 10px;
 
-  /* TO DO: Add styling here */
+  /* Max-width defines how wide an element can be at the maximum. Up until this width,
+  the element uses as much space as it needs. */
+  max-width: 350px;
+
+  /* TASK: Add styling here */
 }
 
 .recipe-description {
@@ -89,5 +97,9 @@ body {
   In this case, the recipe-description <div> requires 10px empty space on the left side. */
   margin-left: 10px;
 
-  /* TO DO: Add styling here */
+  /* Max-width defines how wide an element can be at the maximum. Up until this width,
+  the element uses as much space as it needs. */
+  max-width: 500px;
+
+  /* TASK: Add styling here */
 }

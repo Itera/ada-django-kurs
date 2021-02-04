@@ -6,14 +6,14 @@ In this part, you will get to know the main page of our application, `index.html
 
 ## Task 1: Retrieve recipes from database
 
-If you open `index.html` in the code editor, you can see that we have hardcoded a recipe into the page template. However, we have a collection of recipes in our database that we want to render in our web application. Achieving this is the main focus of this task.
+If you open `cookbook/templates/cookbook/index.html` in the code editor, you can see that we have hardcoded a recipe into the page template. However, we have a collection of recipes in our database that we want to render in our web application. Achieving this is the main focus of this task.
 
-Open `views.py` in the code editor. This is where the _views_ of our application is defined. Views define what happens when the user opens a certain page in their web browser. In this case, the view `index` renders a static HTML template called `index.html`.
+Open `cookbook/views.py` in the code editor. This is where the _views_ of our application is defined. Views define what happens when the user opens a certain page in their web browser. In this case, the view `index` renders a static HTML template called `index.html`. We are now going to add some more logic inside the `index` function.
 
 The first step is to retrieve the recipe objects from the database. This can be done using the following syntax, where `[MODEL]` specifies what type of objects we want to retrieve from our database:
 
 ```python
-object_list = [MODEL].objects.all()
+item_list = [MODEL].objects.all()
 ```
 
 In our case, we are interested in the model `Recipe`. This can be achieved by changing the previous command to the following:
@@ -31,7 +31,7 @@ from .models import Recipe
 The next step is to render these objects in the static template, called `index.html`. For the template to be able to handle these objects, we have to pass them on as _context_ to the template. Context is an object that are used in the render function, and is just a fancy way of saying that we need to send these objects to the template. You can define a context like this:
 
 ```python
-context = {"variable": [VARIABLE]}
+context = {"item_list": item_list}
 ```
 
 To include this context in the render function, you can add it as a third parameter:
@@ -40,7 +40,7 @@ To include this context in the render function, you can add it as a third parame
 return render(request, "cookbook/index.html", context)
 ```
 
-Define your `recipe_list` variable in the context, add it as a third parameter in the render function and save the file. Reload the page _/cookbook_ and see what happens.
+Define your `recipe_list` variable in the context. Once this is done, you can add it as a third parameter in the render function (behind the `index.html` reference). Save the file, reload the page _/cookbook_ and see what happens.
 
 Did the database objects appear on your screen?
 
@@ -64,7 +64,7 @@ The items in your for-loop can then be rendered using HTML tags. One easy way to
 <p>{{ item }}</p>
 ```
 
-One can also render specific attributes of an object, for instance the `title` of our recipe. To use the attribute `title`, you can use the following syntax:
+Your output should now be a list of the recipe objects, where each object has a format like this: `Recipe object (1)`. However, this is not very readable, is it? This is because we print the whole object, which is not very user-friendly. To fix this, we can instead render specific attributes of the object, for instance the `title` of our recipe. To use the attribute `title`, you can use the following syntax:
 
 ```html
 <h2>{{ item.title }}</h2>
