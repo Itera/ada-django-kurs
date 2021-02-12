@@ -56,7 +56,7 @@ For this project, the following files are relevant to take a look at:
 
 `urls.py` defines which pages we can access through our application, for instance _/cookbook_ and _/cookbook/1_, and associates these with _views_. The views are defined in `views.py`, and decides what content or which templates to render for the different views.
 
-`index.html` and `detail.html` are static templates, and are written in HTML. The templates define what type of content the web page should contain, and the content is styled using the CSS in `style.css`. These three files construct the "visual" part of our web application.
+`index.html` and `detail.html` are templates written in HTML. The templates define what type of content the web page should contain, and the content is styled using the CSS in `style.css`. These three files construct the "visual" part of our web application.
 
 For a description of `models.py`, take a look at the section below.
 

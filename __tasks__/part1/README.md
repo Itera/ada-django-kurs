@@ -8,7 +8,7 @@ In this part, you will get to know the main page of our application, `index.html
 
 If you open `cookbook/templates/cookbook/index.html` in the code editor, you can see that we have hardcoded a recipe into the page template. However, we have a collection of recipes in our database that we want to render in our web application. Achieving this is the main focus of this task.
 
-Open `cookbook/views.py` in the code editor. This is where the _views_ of our application is defined. Views define what happens when the user opens a certain page in their web browser. In this case, the view `index` renders a static HTML template called `index.html`. We are now going to add some more logic inside the `index` function.
+Open `cookbook/views.py` in the code editor. This is where the _views_ of our application is defined. Views define what happens when the user opens a certain page in their web browser. In this case, the view `index` renders an HTML template called `index.html`. We are now going to add some more logic inside the `index` function.
 
 The first step is to retrieve the recipe objects from the database. This can be done using the following syntax, where `[MODEL]` specifies what type of objects we want to retrieve from our database:
 
@@ -28,7 +28,7 @@ Remember to import the model by putting the following on top of the file:
 from .models import Recipe
 ```
 
-The next step is to render these objects in the static template, called `index.html`. For the template to be able to handle these objects, we have to pass them on as _context_ to the template. Context is an object that are used in the render function, and is just a fancy way of saying that we need to send these objects to the template. You can define a context like this:
+The next step is to render these objects in the template called `index.html`. For the template to be able to handle these objects, we have to pass them on as _context_ to the template. Context is an object that are used in the render function, and is just a fancy way of saying that we need to send these objects to the template. You can define a context like this:
 
 ```python
 context = {"item_list": item_list}
@@ -40,7 +40,7 @@ To include this context in the render function, you can add it as a third parame
 return render(request, "cookbook/index.html", context)
 ```
 
-Define your `recipe_list` variable in the context. Once this is done, you can add it as a third parameter in the render function (behind the `index.html` reference). Save the file, reload the page _/cookbook_ and see what happens.
+Define your `recipe_list` variable in the context. Once this is done, you can add it as a third parameter in the render function (behind the `index.html` reference). Reload the page _/cookbook_ and see what happens.
 
 Did the database objects appear on your screen?
 
@@ -50,7 +50,7 @@ Unfortunately no, the page looks the same as before. Did you understand why? As 
 
 You have now retrieved the database objects, and it's time to render them in our template. We only have one hardcoded recipe in our template, and it's your job to switch out this recipe with our new dataset.
 
-The first step is to for-loop through the dataset. The for-loop can be written as you would usually do in Python, but since this is a HTML file, you have to add some characters around it to declare that this is Python code and not HTML. Here is an example:
+The first step is to for-loop through the dataset. The for-loop can be written as you would usually do in Python, but since this is an HTML file, you have to add some characters around it to declare that this is Python code and not HTML. Here is an example:
 
 ```
 {% for item in item_list %}
@@ -58,7 +58,7 @@ The first step is to for-loop through the dataset. The for-loop can be written a
 {% endfor %}
 ```
 
-The items in your for-loop can then be rendered using HTML tags. One easy way to do this is to use a `<p>` tag (paragraph) for each item and render the content inside it. Again, we have to use a special syntax for rendering Python variables in a HTML file. Here is an example:
+The items in your for-loop can then be rendered using HTML tags. One easy way to do this is to use a `<p>` tag (paragraph) for each item and render the content inside it. Again, we have to use a special syntax for rendering Python variables in an HTML file. Here is an example:
 
 ```html
 <p>{{ item }}</p>
@@ -70,7 +70,7 @@ Your output should now be a list of the recipe objects, where each object has a 
 <h2>{{ item.title }}</h2>
 ```
 
-Note that we wrapped the recipe title in a HTML `<h2>` tag instead of a `<p>` tag. `<h2>` is a heading tag in HTML, and is the second largest heading one can use.
+Note that we wrapped the recipe title in an HTML `<h2>` tag instead of a `<p>` tag. `<h2>` is a heading tag in HTML, and is the second largest heading one can use.
 
 Did the recipe titles appear on your screen? For-loops and data rendering is a bit tricky in HTML, so check out the `__solutions__` folder if you experience some issues.
 

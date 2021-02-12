@@ -10,6 +10,3 @@ class Recipe(models.Model):
     image = models.ImageField(upload_to="recipes")
     pub_date = models.DateTimeField(default=datetime.now)
     duration = models.TextField()
-
-    def __str__(self):
-        return self.title

@@ -32,7 +32,7 @@ Click [here](/__tasks__/optional/task3_author) to go to task 3.
 
 ## Task 4: Add new recipe attribute (likes)
 
-Level of difficulty: **medium**.
+Level of difficulty: **medium+**.
 
 In this task, you will add a new field to our `Recipe` model such that users of our application can "like" the different recipes. In addition to rendering the new field in our application, you will also have to update the value in our database every time a user clicks "like".
 
@@ -44,6 +44,6 @@ Click [here](/__tasks__/optional/task4_likes) to go to task 4.
 
 Level of difficulty: **hard**.
 
-In this task, you will add a comment section in the detail view of each recipe. To achieve this, you will need to add a new model `Comment` in our database, and render the data in our application. The second half of the task is You can also add a separate page in our application
+In this task, you will add a comment section in the detail view of each recipe. To achieve this, you will need to add a new model `Comment` in our database, and render the data in our application. The second half of the task is to create a separate page in our application for adding comments to each recipe. The second part is a bit harder to implement than the first, but you can stop after the first part if you would like to explore other tasks instead.
 
 Click [here](/__tasks__/optional/task5_comments) to go to task 5.

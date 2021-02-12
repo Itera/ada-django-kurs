@@ -6,7 +6,7 @@ In this part, you will get to know the detail page, where one single recipe is d
 
 ## Task 1: Retrieve recipe from database
 
-Open `views.py` in the code editor. As you can see, the view `detail` renders a static HTML template called `detail.html`, and it takes `recipe_id` as a parameter. This recipe id is retrieved from the URL, and is the value after _/cookbook/_. `recipe_id` is a unique identifier for a recipe, and we are going to use this value to retrieve the correct recipe.
+Open `views.py` in the code editor. As you can see, the view `detail` renders an HTML template called `detail.html`, and it takes `recipe_id` as a parameter. This recipe id is retrieved from the URL, and is the value after _/cookbook/_. `recipe_id` is a unique identifier for a recipe, and we are going to use this value to retrieve the correct recipe.
 
 Retrieving an objects based on its identifier, also called _primary key_ or _pk_, can be achieved by using the following expression:
 

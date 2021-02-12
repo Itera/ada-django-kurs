@@ -40,7 +40,7 @@ Did you manage to create the link? If not, don't worry! Check out the `__solutio
 
 Now it's easy to navigate to a specific recipe, but we should also make it easier to navgiate back to the recipe list in case we want to explore other recipes. To achieve this, we will add a _back_ button in the detail view. This can be performed in the same way as in the previous task, except this time we do not need to include a variable in the URL path.
 
-Open `detail.html` and include a HTML `<p>` tag with the text _Back_ inside it. Try adding a link around it. Remember that `[APPNAME]` will stay the same, but you have to switch out `[NAME]` with the correct URL name.
+Open `detail.html` and include an HTML `<p>` tag with the text _Back_ inside it. Try adding a link around it. Remember that `[APPNAME]` will stay the same, but you have to switch out `[NAME]` with the correct URL name.
 
 Did it work? Great! If not, ask an Itera employee for help or check out the `__solutions__` folder.
 
@@ -48,13 +48,13 @@ Good job! Now it's much easier to navigate and use the application the way it is
 
 ## Task 3: Add images in the list view
 
-To make the list view a bit more appealing, we will display the images here like we did in the detail view. To achieve this, you can reuse the for-loop you wrote in part 1 and add a HTML `<img>` tag inside it. Here is a short recap of you images can be rendered:
+To make the list view a bit more appealing, we will display the images here like we did in the detail view. To achieve this, you can reuse the for-loop you wrote in part 1 and add an HTML `<img>` tag inside it. Here is a short recap of you images can be rendered:
 
 ```
 <img src={{ [VARIABLE].image.url }} width="500px" />
 ```
 
-Once you have added the tag, save the file and reload the list page. Now you can see the images for each recipe, in addition to the titles you rendered in part 1. Great job!
+Once you have added the tag, reload the list page. Now you can see the images for each recipe, in addition to the titles you rendered in part 1. Great job!
 
 ## Task 4: Styling the recipes in the list view
 

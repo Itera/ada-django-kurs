@@ -12,7 +12,7 @@ Open `models.py` and create a new class named `Comment`. As with the `Recipe` mo
 
 - `comment`: _TextField_
 - `author`: _TextField_
-- `pub_date`: _ DateTimeField_
+- `pub_date`: _DateTimeField_
 
 Take a look at how these fields are used in the `Recipe` model, and reuse the same syntax in our new model. Additionally, we need a `recipe` field for connecting the comments to the correct recipe. This `recipe` field is called a foreign key, and works as a pointer to a given recipe. You can add the foreign key like this:
 
@@ -20,9 +20,7 @@ Take a look at how these fields are used in the `Recipe` model, and reuse the sa
 recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
 ```
 
-Remember to save the file before continuing. Your `Comment` model should look like this:
-
-<!-- Kan evt. fjerne løsningen under -->
+Once you have added all the fields, your `Comment` model should look like this:
 
 ```python
 class Comment(models.Model):
@@ -34,7 +32,7 @@ class Comment(models.Model):
 
 Next, we need to let our database know about the changes to our model. To do this, we create a _migration_, which describes the changes we have made. After we have created the migration, we apply the migration to let the database know about the changes.
 
-First, click on the terminal in repl.it. Type the following into the terminal, and press enter:
+First, click on the tab named `Shell` in the bottom right window in repl.it. Type the following into the shell, and press enter:
 
 ```python
 python manage.py makemigrations cookbook
@@ -46,7 +44,7 @@ This command created a migration with the changes you have made. Further, we wil
 python manage.py migrate cookbook
 ```
 
-Type it into your terminal, and press enter. Now you should see a message ending with `OK`. If not, ask an Itera employee for help.
+Type it into your shell, and press enter. Now you should see a message ending with `OK`. If not, ask an Itera employee for help.
 
 The next step is to create a few comments we can display in our application. To do this, we will use the Django admin panel. This is a page where you, among other things, can see and edit all the content in your database. But, before we head over to the admin panel, we have to register our new `Comment` model such that we can access it through the admin panel.
 
@@ -56,7 +54,7 @@ Open `admin.py`, and import `Comment` from `.models`. As you can see, the `Recip
 admin.site.register(Comment)
 ```
 
-Save the file and head over to _/admin_. Log in with username _ada_ and password _lovelace_, and you will access the admin panel. Click on `Comments`, and then `Add comment` in the upper right corner. Choose the recipe you want to comment, type in author and your comment, and save the changes. Repeat this a few times such that we have some testdata.
+Head over to _/admin_. Log in with username _ada_ and password _lovelace_, and you will access the admin panel. Click on `Comments`, and then `Add comment` in the upper right corner. Choose the recipe you want to comment, type in author and your comment, and save the changes. Repeat this a few times such that we have some testdata.
 
 Now it's time to render these comments in our application. Open `detail.html`, and add a `<h2>` tag with the text "Comments" in it. To render our comments, we will perform some magic.
 
@@ -68,19 +66,17 @@ recipe.comment_set.all
 
 This will return a list of comments for the given recipe. Now, use a for-loop to iterate through the comment list and add display each comment with a `<p>` tag. Remember that you can access the different fields by using the syntax `[VARIABLE].comment`, `[VARIABLE].author` etc.
 
-Stuck in the for-loop? Remember to ask an Itera employee for help or check out the `__solutions__` folder.
+Stuck in the for-loop? Remember to ask an Itera employee for help or check out the `__solutions__` folder. Also, remember that you created such a for-loop in part 1 of the project, so you could also seek inspiration in `index.html`.
 
-Save the file and head over to _/cookbook_. Navigate to one of the recipes you added a comment to. Hopefully, the comments will now have appeared in your application. Great job!
+Head over to _/cookbook_. Navigate to one of the recipes you added a comment to. Hopefully, the comments will now have appeared in your application. Great job!
 
 ## Step 2: Create comments in the application
 
 If we want to add a new comment, we have to access the admin panel and type it in there. Wouldn't it be easier if we could add the comments directly in the application? Let's fix that!
 
-First, we would like a new view (page) for registering comments. Add a new file in `templates/cookbook/` with the name `comment.html`.
-
 Open `urls.py` and insert a new path with the same format as the other two. Here's the information you need for constructing the path:
 
-- We would like the path to be "<int:recipe_id>/comment".
+- We would like the path to be "\<int:recipe_id\>/comment".
 - We are going to add a view in `views.py`, and the name of this view will be `comment`.
 - We would like to use the name "comment" to refer to this path.
 
@@ -88,7 +84,7 @@ Did you manage to construct the new path? Remember to check out the `__solutions
 
 Next, open `views.py`. Now we will add the logic for posting new comments to our database.
 
-Create a function `comment`, which contains exactly the same logic as `detail`, but the url in the render statement is _cookbook/comment.html.html_ instead of _cookbook/detail.html_. Further, add this code above the render statement:
+Create a function `comment`, which contains exactly the same logic as `detail`, but the url in the render statement is _cookbook/comment.html_ instead of _cookbook/detail.html_. Further, add this code above the render statement:
 
 ```python
 if request.method == "POST":
@@ -111,7 +107,7 @@ from django.urls import reverse
 from .models import Recipe, Comment
 ```
 
-Next, we need to fix our static templates. Open `comment.html`, copy this HTML structure and paste it into your file:
+The next step is to create a template (page) for registering comments. Add a new file in `templates/cookbook/` with the name `comment.html`. Copy this HTML structure and paste it into your file:
 
 ```html
 {% load static %}
@@ -120,11 +116,13 @@ Next, we need to fix our static templates. Open `comment.html`, copy this HTML s
   <head>
     <link rel="stylesheet" href="{% static 'cookbook/style.css' %}" />
   </head>
-  <body></body>
+  <body>
+  
+  </body>
 </html>
 ```
 
-First, add a `<h1>` heading where you write something like "Register comment for xxx". Use the recipe variable to switch out "xxx" with the recipe title.
+First, add a `<h1>` heading inside the `<body>` where you write something like "Register comment for xxx". Use the recipe variable to switch out "xxx" with the recipe title.
 
 Next, we will add a form below our heading. Forms can be a bit tricky, so we have completed a form for you:
 
@@ -143,9 +141,9 @@ The _form action_ url specifies which url we will send our request to, and the _
 
 The submit button will redirect us back to the detail view, but the user might reconsider publishing a comment before submitting. To make it easier to navigate back to the detail view, add a _back_ button like we did in `detail.html`. Remember to use the correct url name and pass `recipe.id` as a parameter.
 
-The final step in this task is to add a link from the detail view to the comment view. You could for instance use a `<p>` with the text "Register a new comment", and then wrap a link around it. Again, remember to use the correct url name and pass `recipe.id` as a parameter.
+The final step in this task is to add a link from the detail view (`detail.html`) to the comment view (`comment.html`). You could for instance use a `<p>` with the text "Register a new comment", and then wrap a link around it. Again, remember to use the correct url name and pass `recipe.id` as a parameter.
 
-Save the files, and reload the page. Try to add a new comment in your new comment view, and check if it appears in the detail view. Did it work? Great job! If not, ask an Itera employee for help or check out the `__solutions__` folder.
+Reload the page once you are finished with the link. Try to add a new comment in your new comment view, and check if it appears in the detail view. Did it work? Great job! If not, ask an Itera employee for help or check out the `__solutions__` folder.
 
 ---
 
