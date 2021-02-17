@@ -1,10 +1,10 @@
 # Web development with Django :rocket:
 
-Welcome to our web development course in Django! This course will give you an introduction to Django and its core concepts, in addition to how HTML and CSS can be used to form a simple web page.
+Welcome to our web development course in Django! This course will give you an introduction to Django and its core concepts, in addition to how HTML and CSS can be used to form a simple web page :computer:
 
 ## How to start the application
 
-To simply the process of setting up the project, we will use an online code editor called repl.it. Repl.it is perfect for short courses like this, as you can just import the code to this online editor instead of setting everything up on your personal laptops.
+To simplify the process of setting up the project, we will use an online code editor called repl.it. Repl.it is perfect for short courses like this, as you can just import the code to this online editor instead of setting everything up on your personal laptops.
 
 1. Head over to [repl.it](https://repl.it) and create your own account.
 2. Click on the button `New repl`, and choose the tab `Import from GitHub`. Import this repository by copying and pasting the following link: https://github.com/Itera/ada-django-kurs. The import view looks like this:
@@ -15,9 +15,9 @@ To simply the process of setting up the project, we will use an online code edit
 
 <img src="media/replit-view.png" alt="Illustration of the repl.it editor." />
 
-Our project is now imported, and it is almost time to get started! 
+Our project is now imported, and it is almost time to get started!
 
-Press the `Run` button on the top of your repl.it page. repl.it will now install all the packages that are required to run your application. Once a window with the title "My recipe list" opens, the application has started successfully :tada:
+Press the `Run` button on the top of your repl.it page. Repl.it will now install all the packages that are required to run your application. Once a window with the title "My recipe list" opens, the application has started successfully :tada:
 
 The application preview on the right is quite small, so we recommend you to open the application in a new tab. To do this, click on the squared button with an arrow inside it. Your application will now open in a new tab in your browser.
 
@@ -27,7 +27,7 @@ Before starting on the tasks in the `__tasks__` folder, read the project introdu
 
 ### How is our application structured?
 
-The project we are going to be working with today is a collection of recipes. To provide you some recipes in the application, we have created a database in advance. Please note that the recipes are just examples, so exploration of these are at your own risk :smile:
+The project we are going to be working with today is a collection of recipes :pizza: To provide you some recipes in the application, we have created a database in advance. Please note that the recipes are just examples, so exploration of these are at your own risk :smile:
 
 #### List view
 
@@ -35,7 +35,7 @@ Open the url https://ada-django-kurs.[REPLIT_USERNAME].repl.co/cookbook/. This i
 
 #### Detail view
 
-Open the url https://ada-django-kurs.[REPLIT_USERNAME].repl.co/cookbook/1. This is our **detail view**, where the specifics of a single recipe will be displayed. The _1_ in the url indicates that we are looking at the recipe with _id = 1_. To show you some content, we have hardcoded a recipe here also. Displaying a recipe and its details will be one of your later tasks.
+Open the url https://ada-django-kurs.[REPLIT_USERNAME].repl.co/cookbook/1. This is our **detail view**, where the specifics of a single recipe will be displayed. The _1_ in the url indicates that we are looking at the recipe with _id = 1_. To show you some content, we have hardcoded a recipe here as well. Displaying a recipe and its details will be one of your later tasks.
 
 #### Admin view
 
@@ -74,7 +74,7 @@ The first three fields are of type `TextField`, and store textual input. Image i
 
 ### Tasks and solutions
 
-Now it's time to get started on the tasks! The `__tasks__` folder is structured like this:
+Now it's time to get started on the tasks! :raised_hands: The `__tasks__` folder is structured like this:
 
 - `part1`: tasks for part 1 of the course.
 - `part2`: tasks for part 2 of the course.

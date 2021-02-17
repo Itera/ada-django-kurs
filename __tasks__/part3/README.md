@@ -38,7 +38,7 @@ Did you manage to create the link? If not, don't worry! Check out the `__solutio
 
 ## Task 2: Add back button in the detail view
 
-Now it's easy to navigate to a specific recipe, but we should also make it easier to navgiate back to the recipe list in case we want to explore other recipes. To achieve this, we will add a _back_ button in the detail view. This can be performed in the same way as in the previous task, except this time we do not need to include a variable in the URL path.
+Now it's easy to navigate to a specific recipe, but we should also make it easier to navigate back to the recipe list in case we want to explore other recipes. To achieve this, we will add a _back_ button in the detail view. This can be performed in the same way as in the previous task, except this time we do not need to include a variable in the URL path.
 
 Open `detail.html` and include an HTML `<p>` tag with the text _Back_ inside it. Try adding a link around it. Remember that `[APPNAME]` will stay the same, but you have to switch out `[NAME]` with the correct URL name.
 

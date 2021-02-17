@@ -22,7 +22,7 @@ In our case, we are interested in the model `Recipe`. This can be achieved by ch
 recipe_list = Recipe.objects.all()
 ```
 
-Remember to import the model by putting the following on top of the file:
+:bulb: Remember to import the model by putting the following on top of the file:
 
 ```python
 from .models import Recipe
@@ -72,7 +72,7 @@ Your output should now be a list of the recipe objects, where each object has a 
 
 Note that we wrapped the recipe title in an HTML `<h2>` tag instead of a `<p>` tag. `<h2>` is a heading tag in HTML, and is the second largest heading one can use.
 
-Did the recipe titles appear on your screen? For-loops and data rendering is a bit tricky in HTML, so check out the `__solutions__` folder if you experience some issues.
+Did the recipe titles appear on your screen? For-loops and data rendering is a bit tricky in HTML, so ask for help if you experience some issues.
 
 ## Task 3: Order your dataset
 
